@@ -1,12 +1,20 @@
+import {
+  toggleNotifications,
+  toggleProfile,
+  toggleSidebar,
+  toggleToolkit,
+} from "./reducers";
 import { createSlice } from "@reduxjs/toolkit";
 
-type configState = {
+type ConfigState = {
+  sidebar: boolean;
   notifications: boolean;
   profile: boolean;
   toolkit: boolean;
 };
 
-const configInitialState: configState = {
+const configInitialState: ConfigState = {
+  sidebar: false,
   profile: false,
   notifications: false,
   toolkit: false,
@@ -16,15 +24,10 @@ const configSlice = createSlice({
   name: "config",
   initialState: configInitialState,
   reducers: {
-    toggleProfile(state) {
-      state.profile = !state.profile;
-    },
-    toggleNotifications(state) {
-      state.notifications = !state.notifications;
-    },
-    toggleToolkit(state) {
-      state.toolkit = !state.toolkit;
-    },
+    toggleSidebar,
+    toggleProfile,
+    toggleNotifications,
+    toggleToolkit,
   },
 });
 

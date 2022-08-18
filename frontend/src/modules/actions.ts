@@ -1,3 +1,3 @@
-import { configActions } from "./configuration";
+import { configActions } from "./app/configuration";
 
 export const actions = { ...configActions };
