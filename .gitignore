@@ -6,6 +6,10 @@ node_modules/
 /.env
 .env/
 
+.env.development
+/.env.development
+.env.development/
+
 /.pnp
 .pnp.js
 

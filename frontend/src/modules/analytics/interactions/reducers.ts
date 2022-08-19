@@ -7,19 +7,21 @@ import {
 } from "./constants";
 
 import { InteractionState } from "./main";
+import interactionSlice from "./main";
 
-type InteractionPayload = {
+export type InteractionPayload = {
   uuid: string | null;
   userId: string | null;
   event: string | null;
   completion: string | null;
+  sys_creation_date: Date | null;
 };
 
 export const setInteraction: CaseReducer<
   InteractionState,
   PayloadAction<InteractionPayload>
 > = (state, action) => {
-  let { uuid, userId, event, completion } = action.payload;
+  let { uuid, userId, event, completion, sys_creation_date } = action.payload;
   uuid = uuid ? uuid : v4().toString();
   userId = userId ? userId : CONST_UNKNOWN_USERID;
   event = event ? event : CONST_UNKNOWN_EVENTS;
@@ -29,16 +31,17 @@ export const setInteraction: CaseReducer<
   state.userId = userId;
   state.event = event;
   state.completion = completion;
-  state.sys_creation_date = new Date();
+  state.sys_creation_date = sys_creation_date ? sys_creation_date : new Date();
 };
 
-export const resetInteraction: CaseReducer<
-  InteractionState,
-  PayloadAction<InteractionPayload>
-> = (state) => {
+export const resetInteraction: CaseReducer<InteractionState, PayloadAction> = (
+  state
+) => {
   state.uuid = null;
   state.userId = null;
   state.event = null;
   state.completion = null;
   state.sys_creation_date = null;
 };
+
+export const { reducer: reducers } = interactionSlice;
