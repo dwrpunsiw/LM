@@ -41,18 +41,12 @@ export const hostAndBrowserInformation = (hostLocation: IHostLocation) => {
 
   if (process.env.REACT_APP_ENV === CONST_ENV_DEV) {
     log.info(
-      `
-    Application accessed from HOST: ${IPv4} - COUNTRY: ${country_name} - STATE: ${state} - CITY: ${city} - LAT: ${latitude} - LNG: ${longitude}\n
-    Browser Metadata: NAME: ${browserInformation.name} - VERSION: ${browserInformation.version} - OS: ${browserInformation.os} - VERSIONNUMBER: ${browserInformation.versionNumber}
-    `,
+      `Application accessed from HOST: ${IPv4} - COUNTRY: ${country_name} - STATE: ${state} - CITY: ${city} - LAT: ${latitude} - LNG: ${longitude}\nBrowser Metadata: NAME: ${browserInformation.name} - VERSION: ${browserInformation.version} - OS: ${browserInformation.os} - VERSIONNUMBER: ${browserInformation.versionNumber}`,
       "logHostAndBrowserInformation"
     );
   } else {
     log.info(
-      `
-    Application accessed from HOST: ${IPv4} - COUNTRY: ${country_name} - STATE: ${state} - CITY: ${city}\n
-    Browser Metadata: NAME: ${browserInformation.name} - VERSION: ${browserInformation.version} - OS: ${browserInformation.os} - VERSIONNUMBER: ${browserInformation.versionNumber}
-
+      `Application accessed from HOST: ${IPv4} - COUNTRY: ${country_name} - STATE: ${state} - CITY: ${city}\nBrowser Metadata: NAME: ${browserInformation.name} - VERSION: ${browserInformation.version} - OS: ${browserInformation.os} - VERSIONNUMBER: ${browserInformation.versionNumber}
     `,
       "logHostAndBrowserInformation"
     );

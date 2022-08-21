@@ -4,7 +4,12 @@ import {
 } from "./comparators/status-code";
 
 export const isSuccessful = (statusCode: number) => {
-  if (statusCode in SUCCESS_RESPONSE_CODE) return true;
+  const success = SUCCESS_RESPONSE_CODE.find((code) => {
+    return code === statusCode;
+  });
+  if (success) {
+    return true;
+  }
 
   return false;
 };

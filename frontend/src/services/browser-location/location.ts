@@ -12,11 +12,11 @@ export const getHostLocation = (
     );
 
     if (!clientUtils.isSuccessful(response.status)) {
-      reject("Failed to get host location");
+      return reject("Failed to get host location");
     }
 
     const browserInformation = callback(response.data);
 
-    resolve(browserInformation);
+    return resolve(browserInformation);
   });
 };

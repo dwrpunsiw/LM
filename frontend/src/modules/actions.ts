@@ -10,11 +10,11 @@ import { interactionActions } from "./analytics/interactions";
 import { interactionActionsCreator } from "./analytics/interactions/actions";
 import { configurationActionsCreator } from "./app/configuration/actions";
 
-type Actions = InteractionActionType | ConfigurationActionType;
+type Actions = InteractionActionType & ConfigurationActionType;
 
 export const actionsCreator = {
   ...interactionActionsCreator,
   ...configurationActionsCreator,
 };
 
-export const actions: Actions = { ...configActions, ...interactionActions };
+export const appActions: Actions = { ...configActions, ...interactionActions };
