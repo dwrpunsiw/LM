@@ -1,4 +1,4 @@
-import { CONST_ENV_DEV } from "./comparators/status-code";
+import { CONST_ENV_DEV } from "../shared/constants/environments";
 import browserDetect from "browser-detect";
 import { log } from "./logging-utils";
 import { IHostLocation } from "../client/models/response/browser-information";

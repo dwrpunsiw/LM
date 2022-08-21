@@ -15,4 +15,9 @@ export const is4XXCompletionResponse = (statusCode: number) => {
   return false;
 };
 
-export default { isSuccessful, is4XXCompletionResponse };
+const clientUtils = {
+  isSuccessful,
+  is4XXCompletionResponse,
+};
+
+export default clientUtils;

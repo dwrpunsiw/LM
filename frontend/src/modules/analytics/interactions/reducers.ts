@@ -7,7 +7,6 @@ import {
 } from "./constants";
 
 import { InteractionState } from "./main";
-import interactionSlice from "./main";
 
 export type InteractionPayload = {
   uuid: string | null;
@@ -43,5 +42,3 @@ export const resetInteraction: CaseReducer<InteractionState, PayloadAction> = (
   state.completion = null;
   state.sys_creation_date = null;
 };
-
-export const { reducer: reducers } = interactionSlice;

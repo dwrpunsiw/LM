@@ -49,4 +49,6 @@ const configSlice = createSlice({
   },
 });
 
+export const reducers = configSlice.reducer;
+
 export default configSlice;

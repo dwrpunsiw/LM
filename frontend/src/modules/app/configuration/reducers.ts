@@ -1,6 +1,6 @@
 import { CaseReducer, PayloadAction } from "@reduxjs/toolkit";
 
-import configSlice, { BrowserInformationType, ConfigState } from "./main";
+import { BrowserInformationType, ConfigState } from "./main";
 
 export const setBrowserInformation: CaseReducer<
   ConfigState,
@@ -28,5 +28,3 @@ export const toggleNotifications: CaseReducer = (state) => {
 export const toggleToolkit: CaseReducer = (state) => {
   state.toolkit = !state.toolkit;
 };
-
-export const { reducer: reducers } = configSlice;

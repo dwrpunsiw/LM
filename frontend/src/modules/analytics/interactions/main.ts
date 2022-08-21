@@ -27,4 +27,6 @@ const interactionSlice = createSlice({
   },
 });
 
+export const { reducer: reducers } = interactionSlice;
+
 export default interactionSlice;
